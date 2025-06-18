@@ -14,7 +14,7 @@ Prepend `Basic` to the output, and provide the entire string as value to an `Aut
 Authorization: Basic bmVvNGo6dmVyeXNlY3JldA==
 ----
 
-link:https://neo4j.com/docs/query-api/current/authentication-authorization/[More info on authorizing requests →]
+link:https://neo4j.com/docs/query-api/current/authentication-authorization/[More info on authorizing requests]
 
 
 == Create an example graph
@@ -23,7 +23,7 @@ Run Cypher query by submitting `POST` requests to your instance's Query API endp
 Do not hardcode or concatenate parameters: use placeholders and specify the parameters via the `parameters` object in the body.
 Line breaks in queries are not supported.
 
-[source, headers]
+[source, headers, copy=true]
 ----
 POST {neo4j-server-uri}/db/{neo4j-database-name}/query/v2
 Authorization: Basic base64({neo4j-username}:{neo4j-password})
@@ -31,7 +31,7 @@ Content-Type: application/json
 ----
 
 .Create two `Person` nodes and a `KNOWS` relationship between them
-[source, json]
+[source, json, copy=true]
 ----
 {
   "statement": "CREATE (a:Person {name: $name}) CREATE (b:Person {name: $friendName}) CREATE (a)-[:KNOWS]->(b)",
@@ -42,14 +42,14 @@ Content-Type: application/json
 }
 ----
 
-link:https://neo4j.com/docs/query-api/current/query/[More info on executing queries →]
+link:https://neo4j.com/docs/query-api/current/query/[More info on executing queries]
 
 
 == Query a graph
 
 To retrieve information from the database, use the Cypher clause `MATCH`.
 
-[source, headers]
+[source, headers, copy=true]
 ----
 POST {neo4j-server-uri}/db/{neo4j-database-name}/query/v2
 Authorization: Basic base64({neo4j-username}:{neo4j-password})
@@ -57,7 +57,7 @@ Content-Type: application/json
 ----
 
 .Retrieve all `Person` nodes who know other `Person` s
-[source, json]
+[source, json, copy=true]
 ----
 {
   "statement": "MATCH (p:Person)-[:KNOWS]->(:Person) RETURN p.name AS name",
@@ -65,4 +65,4 @@ Content-Type: application/json
 }
 ----
 
-link:https://neo4j.com/docs/query-api/current/query/[More info on executing queries →]
+link:https://neo4j.com/docs/query-api/current/query/[More info on executing queries]
