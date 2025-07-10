@@ -6,7 +6,7 @@ Join your username and password with a colon `:` and base64-encode the resulting
 
 [source, bash]
 ----
-base64({neo4j-username}:{neo4j-password})
+base64(<username>:<password>)
 ----
 
 Prepend `Basic` to the output, and provide the entire string as value to an `Authorization` header.
@@ -27,8 +27,8 @@ Line breaks in queries are not supported.
 
 [source, headers, copy=true]
 ----
-POST {neo4j-server-uri}/db/{neo4j-database-name}/query/v2
-Authorization: Basic base64({neo4j-username}:{neo4j-password})
+POST <database-uri-http>/db/<database-name>/query/v2
+Authorization: Basic base64(<username>:<password>)
 Content-Type: application/json
 ----
 
@@ -53,8 +53,8 @@ To retrieve information from the database, use the Cypher clause `MATCH`.
 
 [source, headers, copy=true]
 ----
-POST {neo4j-server-uri}/db/{neo4j-database-name}/query/v2
-Authorization: Basic base64({neo4j-username}:{neo4j-password})
+POST <database-uri-http>/db/<database-name>/query/v2
+Authorization: Basic base64(<username>:<password>)
 Content-Type: application/json
 ----
 

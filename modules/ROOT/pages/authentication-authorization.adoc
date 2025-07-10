@@ -14,7 +14,7 @@ If authentication is disabled on the server, requests can be sent without an `Au
 The header format for basic authentication follows the standard format (RFC 7617):
 
 ----
-Authorization: Basic <base64(username:password)>
+Authorization: Basic <base64(<username>:<password>)>
 ----
 
 .Basic authentication
@@ -55,7 +55,7 @@ Authorization: Basic bmVvNGo6dmVyeXNlY3JldA==
 The header format to authenticate with a bearer token is:
 
 ----
-Authorization: Bearer <base64(token)>
+Authorization: Bearer <base64(<token>)>
 ----
 
 .Bearer authentication
