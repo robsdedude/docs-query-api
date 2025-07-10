@@ -4,12 +4,14 @@ All requests must be authorized using the login credentials of a valid user.
 
 Join your username and password with a colon `:` and base64-encode the resulting string.
 
+[source, bash]
 ----
 base64({neo4j-username}:{neo4j-password})
 ----
 
 Prepend `Basic` to the output, and provide the entire string as value to an `Authorization` header.
 
+[source, bash]
 ----
 Authorization: Basic bmVvNGo6dmVyeXNlY3JldA==
 ----
@@ -19,7 +21,7 @@ link:https://neo4j.com/docs/query-api/current/authentication-authorization/[More
 
 == Create an example graph
 
-Run Cypher query by submitting `POST` requests to your instance's Query API endpoint.
+Run Cypher queries by submitting `POST` requests to your instance's Query API endpoint.
 Do not hardcode or concatenate parameters: use placeholders and specify the parameters via the `parameters` object in the body.
 Line breaks in queries are not supported.
 
@@ -56,7 +58,7 @@ Authorization: Basic base64({neo4j-username}:{neo4j-password})
 Content-Type: application/json
 ----
 
-.Retrieve all `Person` nodes who know other `Person` s
+.Retrieve all `Person` nodes who know other persons
 [source, json, copy=true]
 ----
 {
