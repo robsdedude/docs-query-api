@@ -11,7 +11,7 @@ If authentication is disabled on the server, requests can be sent without an `Au
 
 == Basic authentication
 
-The header format for basic authentication follows the standard format (RFC 7617):
+The header format for basic authentication follows the standard format (RFC 7617), with UTF-8 encoding:
 
 ----
 Authorization: Basic <base64(<username>:<password>)>
