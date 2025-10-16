@@ -251,6 +251,18 @@ true
 The direction of the relationship in a path is only encoded in the start and end node element IDs.
 The order of returned nodes and relationships is not representative of the direction of relationships.
 
+| VECTOR
+| array
+| [source, JSON]
+----
+[123, 456]
+----
+
+label:enterprise-edition[] label:new[Introduced in 2025.10]
+
+[NOTE]
+link:https://neo4j.com/docs/cypher-manual/current/values-and-types/vector/[`VECTOR`] values can only be retrieved from the database, but cannot be passed as parameters.
+To create vectors, use the link:https://neo4j.com/docs/cypher-manual/current/values-and-types/vector/#construct-vector-values[Cypher `vector` constructor].
 |===
 
 
@@ -654,5 +666,9 @@ This section details how link:{neo4j-docs-base-uri}/cypher-manual/current/values
 [NOTE]
 The direction of the relationship in a path is only encoded in the start and end node element IDs.
 The order of returned nodes and relationships is not representative of the direction of relationships.
+
+| VECTOR
+|
+| Currently unsupported.
 
 |===
